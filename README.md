@@ -17,7 +17,8 @@ it cannot conflict with agent 1 at any specific time step to get to a goal. We
 keep doing this for all the agents until they are processed. If we process the agents
 differently, we might have a different result, for example, (4,2,3,1,5) might have
 conditionals such that 1 can no longer take the path it would have taken if it was
-processed first.
+processed first. We take log(n) different permutations and take the one with the lowest
+cost to be used!
 
 ## Experiment
 
