@@ -81,7 +81,7 @@ def main():
         # Read Map
         with open(args.map, 'r') as map_file:
             try:
-                map = yaml.load(map_file, Loader=yaml.FullLoader)
+                _map = yaml.load(map_file, Loader=yaml.FullLoader)
             except yaml.YAMLError as exc:
                 print(exc)
 
@@ -91,7 +91,7 @@ def main():
         # calculate
         thread_cost = 0
         for i in perm:
-            sipp_planner = SippPlanner(map,i)
+            sipp_planner = SippPlanner(_map,i)
         
             if sipp_planner.compute_plan():
                 plan, _ = sipp_planner.get_plan()
@@ -112,7 +112,7 @@ def main():
     # finish running threads
     for t in threads:
         t.join()
-    # print(costs)
+    print(costs)
     
     print(f"Plan found with cost of {min(list(costs.values()))}")
 

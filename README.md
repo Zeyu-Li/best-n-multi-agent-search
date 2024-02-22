@@ -30,3 +30,8 @@ will stay at the lower bound.
 
 Template code from [atb033/multi_agent_path_planning](https://github.com/atb033/multi_agent_path_planning/tree/master) on GitHub for CBS
 [https://atb033.github.io/multi_agent_path_planning/](https://atb033.github.io/multi_agent_path_planning/)
+
+## Testing
+
+When you are testing with maps, make sure the yaml has a dynamic_obstacles object
+
