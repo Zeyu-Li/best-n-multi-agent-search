@@ -85,6 +85,9 @@ class SippGraph(object):
 
                 self.sipp_graph[position].split_interval(t, last_t)
                 # print(str(position) + str(self.sipp_graph[position].interval_list))     
+    
+    def has_collisions(self):
+        return not self.dyn_obstacles
 
     def is_valid_position(self, position):
         dim_check = position[0] in range(self.dimensions[0]) and  position[1] in range(self.dimensions[1])

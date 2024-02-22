@@ -35,7 +35,7 @@ class SippPlanner(SippGraph):
                 time = max(start_t, i[0]) 
                 s = State(neighbour, time, i)
                 successors.append(s)
-        return successors
+        return successors #, self.has_collisions()
 
     def get_heuristic(self, position):
         return fabs(position[0] - self.goal[0]) + fabs(position[1]-self.goal[1])
@@ -66,7 +66,7 @@ class SippPlanner(SippGraph):
                     self.sipp_graph[successor.position].parent_state = s
 
                     if successor.position == self.goal:
-                        print("Plan successfully calculated!!")
+                        # print("Plan successfully calculated!!")
                         goal_reached = True
                         break
 
@@ -106,7 +106,7 @@ class SippPlanner(SippGraph):
             path_list.append(temp_dict)
 
         data = {self.name:path_list}
-        return data
+        return data, self.has_collisions()
 
 
 
